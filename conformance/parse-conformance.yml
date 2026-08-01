@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: derived
+source: https://docs.parseplatform.org/rest/guide/
+standards:
+  - id: rest-json
+    conforms: true
+    evidence: Resource-oriented HTTP+JSON API over /parse/classes, /parse/users, etc.
+  - id: oauth2
+    conforms: false
+    evidence: Auth is application-id + REST/master key or session token headers; no OAuth2 at the REST layer.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a custom { code, error } envelope, not application/problem+json.
+  - id: rfc8594-sunset-header
+    conforms: false
+  - id: json-api
+    conforms: false
+  - id: idempotency
+    conforms: true
+    evidence: Optional request deduplication via the X-Parse-Request-Id header (experimental).
+  - id: pagination
+    conforms: true
+    evidence: limit / skip / count query parameters documented for all queries.
+  - id: webhooks
+    conforms: true
+    evidence: Cloud Code function/trigger webhooks + LiveQuery real-time protocol.
+compliance_program:
+  published: false
+  note: >-
+    Parse Platform is self-hosted open-source software; there is no vendor-operated
+    compliance program (SOC 2 / ISO 27001 / PCI). Compliance posture is a property
+    of each operator's own deployment.

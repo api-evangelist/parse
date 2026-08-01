@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/parse-community/parse-server/releases + https://docs.parseplatform.org/
+versioning:
+  scheme: semver
+  current: '9.10.0'
+  surface: parse-server npm package
+  releases: https://github.com/parse-community/parse-server/releases
+  channels: [release, beta, alpha]
+  note: >-
+    Parse Server follows Semantic Versioning with automated releases per branch
+    (release / beta / alpha). The REST contract is versioned by the mount path
+    prefix (default /parse/).
+deprecation:
+  policy: true
+  mechanism: >-
+    Deprecations are announced in CHANGELOG.md and release notes ahead of removal
+    in a following major version; deprecated options emit runtime warnings.
+  docs: https://github.com/parse-community/parse-server/blob/alpha/CHANGELOG.md
+support_window:
+  note: >-
+    Parse Server publishes a versioned dependency/Node.js and database
+    compatibility matrix in the docs; older majors receive security fixes for a
+    limited window.
+  compatibility_docs: https://docs.parseplatform.org/parse-server/guide/#compatibility-with-parse-server
+status_page:
+  hosted: false
+  note: >-
+    Parse Platform is self-hosted open-source software, so there is no central
+    provider status page; availability is a property of each operator's own
+    deployment.
+sla:
+  hosted: false
+deprecated_operations: []

@@ -1,0 +1,132 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.parseplatform.org/ (Parse error code registry) + Parse SDK ParseError constants
+envelope:
+  content_type: application/json
+  shape: '{ "code": <int>, "error": "<human message>" }'
+  batch_note: >-
+    In /parse/batch responses each item is either { "success": ... } or
+    { "error": { "code": <int>, "error": "..." } }.
+format: parse-error-codes
+codes:
+  - code: -1
+    name: OTHER_CAUSE
+    meaning: Unknown or unclassified error.
+  - code: 1
+    name: INTERNAL_SERVER_ERROR
+    meaning: Internal server error; something went wrong on the server.
+    action: Retry with backoff; report if persistent.
+  - code: 100
+    name: CONNECTION_FAILED
+    meaning: The connection to the Parse server failed.
+    action: Check network / server URL; retry.
+  - code: 101
+    name: OBJECT_NOT_FOUND
+    meaning: Object not found, or the ACL/CLP hides it from this credential.
+    action: Verify objectId and that the credential has read access.
+  - code: 102
+    name: INVALID_QUERY
+    meaning: Invalid query constraint or malformed where clause.
+  - code: 103
+    name: INVALID_CLASS_NAME
+    meaning: Missing or invalid class name.
+  - code: 104
+    name: MISSING_OBJECT_ID
+    meaning: An objectId is required for this operation and was not provided.
+  - code: 105
+    name: INVALID_KEY_NAME
+    meaning: An invalid field name was used in the request.
+  - code: 106
+    name: INVALID_POINTER
+    meaning: A malformed pointer was used.
+  - code: 107
+    name: INVALID_JSON
+    meaning: Badly formed JSON was received.
+  - code: 108
+    name: COMMAND_UNAVAILABLE
+    meaning: The requested operation is not available in this environment.
+  - code: 111
+    name: INCORRECT_TYPE
+    meaning: A field was set to an incompatible type.
+  - code: 112
+    name: INVALID_CHANNEL_NAME
+    meaning: Invalid channel name for push subscription.
+  - code: 114
+    name: INVALID_DEVICE_TOKEN
+    meaning: Invalid device token for push notifications.
+  - code: 116
+    name: OBJECT_TOO_LARGE
+    meaning: The object is too large to save.
+  - code: 119
+    name: OPERATION_FORBIDDEN
+    meaning: The operation is not allowed for this credential (CLP/ACL).
+    action: Use an appropriately-scoped key or session token.
+  - code: 120
+    name: CACHE_MISS
+    meaning: The requested result was not found in cache.
+  - code: 121
+    name: INVALID_NESTED_KEY
+    meaning: An invalid key/value pair was used in a nested JSON object.
+  - code: 122
+    name: INVALID_FILE_NAME
+    meaning: Invalid file name (character set/length constraints).
+  - code: 123
+    name: INVALID_ACL
+    meaning: An invalid ACL was provided.
+  - code: 124
+    name: TIMEOUT
+    meaning: The request timed out on the server.
+    action: Retry with backoff.
+  - code: 125
+    name: INVALID_EMAIL_ADDRESS
+    meaning: The email address was invalid.
+  - code: 137
+    name: DUPLICATE_VALUE
+    meaning: A unique-field value already exists.
+  - code: 139
+    name: INVALID_ROLE_NAME
+    meaning: A role's name is invalid.
+  - code: 140
+    name: RESERVED_VALUE
+    meaning: An application-reserved value was used.
+  - code: 141
+    name: SCRIPT_FAILED
+    meaning: A Cloud Code script failed.
+  - code: 142
+    name: VALIDATION_ERROR
+    meaning: A Cloud Code validation (beforeSave) failed.
+  - code: 150
+    name: FILE_DELETE_ERROR
+    meaning: Failed to delete a file.
+  - code: 155
+    name: REQUEST_LIMIT_EXCEEDED
+    meaning: The application's request limit was exceeded.
+    action: Reduce request rate / upgrade capacity.
+  - code: 200
+    name: USERNAME_MISSING
+    meaning: The username was not provided on signup.
+  - code: 201
+    name: PASSWORD_MISSING
+    meaning: The password was not provided on signup.
+  - code: 202
+    name: USERNAME_TAKEN
+    meaning: The username is already taken.
+  - code: 203
+    name: EMAIL_TAKEN
+    meaning: The email is already in use by another account.
+  - code: 204
+    name: EMAIL_MISSING
+    meaning: An email address is required but was not provided.
+  - code: 205
+    name: EMAIL_NOT_FOUND
+    meaning: No account exists for the given email.
+  - code: 206
+    name: SESSION_MISSING
+    meaning: A session token is required for this operation.
+  - code: 209
+    name: INVALID_SESSION_TOKEN
+    meaning: The session token is invalid or has been revoked.
+    action: Re-authenticate the user.
+  - code: 252
+    name: INVALID_LINKED_SESSION
+    meaning: A linked third-party account session is invalid.

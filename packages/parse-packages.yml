@@ -1,0 +1,99 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/parse-community + npm/Packagist/NuGet/pub.dev registries
+packages:
+  - language: javascript
+    registry: npm
+    name: parse
+    url: https://www.npmjs.com/package/parse
+    install: npm install parse
+    repo: https://github.com/parse-community/Parse-SDK-JS
+    version: 8.6.0
+    license: Apache-2.0
+    official: true
+    kind: sdk
+  - language: javascript
+    registry: npm
+    name: parse-server
+    url: https://www.npmjs.com/package/parse-server
+    install: npm install parse-server
+    repo: https://github.com/parse-community/parse-server
+    version: 9.10.0
+    license: Apache-2.0
+    official: true
+    kind: server
+  - language: javascript
+    registry: npm
+    name: parse-dashboard
+    url: https://www.npmjs.com/package/parse-dashboard
+    install: npm install -g parse-dashboard
+    repo: https://github.com/parse-community/parse-dashboard
+    version: 9.2.0
+    official: true
+    kind: tool
+  - language: swift
+    registry: cocoapods
+    name: Parse (Parse-SDK-iOS-OSX)
+    url: https://github.com/parse-community/Parse-SDK-iOS-OSX
+    repo: https://github.com/parse-community/Parse-SDK-iOS-OSX
+    official: true
+    kind: sdk
+    notes: Apple SDK for iOS, macOS, watchOS, tvOS (Objective-C/Swift)
+  - language: swift
+    registry: swiftpm
+    name: ParseSwift
+    url: https://github.com/parse-community/Parse-Swift
+    repo: https://github.com/parse-community/Parse-Swift
+    official: true
+    kind: sdk
+    notes: Pure Swift SDK (iOS, macOS, watchOS, tvOS, Linux, Android, Windows)
+  - language: java
+    registry: maven
+    name: com.parse:parse-android
+    url: https://github.com/parse-community/Parse-SDK-Android
+    repo: https://github.com/parse-community/Parse-SDK-Android
+    install: implementation "com.github.parse-community.Parse-SDK-Android:parse:latest"
+    official: true
+    kind: sdk
+  - language: dart
+    registry: pub.dev
+    name: parse_server_sdk
+    url: https://pub.dev/packages/parse_server_sdk
+    install: dart pub add parse_server_sdk
+    repo: https://github.com/parse-community/Parse-SDK-Flutter
+    version: 9.7.0
+    official: true
+    kind: sdk
+  - language: php
+    registry: packagist
+    name: parse/php-sdk
+    url: https://packagist.org/packages/parse/php-sdk
+    install: composer require parse/php-sdk
+    repo: https://github.com/parse-community/parse-php-sdk
+    version: 2.4.0
+    official: true
+    kind: sdk
+  - language: dotnet
+    registry: nuget
+    name: Parse
+    url: https://www.nuget.org/packages/Parse
+    install: dotnet add package Parse
+    repo: https://github.com/parse-community/Parse-SDK-dotNET
+    official: true
+    kind: sdk
+  - language: cpp
+    registry: arduino
+    name: Parse-SDK-Arduino
+    url: https://github.com/parse-community/Parse-SDK-Arduino
+    repo: https://github.com/parse-community/Parse-SDK-Arduino
+    official: true
+    kind: sdk
+    notes: Arduino SDK for the Parse Platform (embedded devices)
+  - language: javascript
+    registry: npm
+    name: '@parse/react'
+    url: https://www.npmjs.com/package/@parse/react
+    repo: https://github.com/parse-community/parse-react
+    official: true
+    kind: sdk
+    notes: React / React Native / SSR bindings (experimental)

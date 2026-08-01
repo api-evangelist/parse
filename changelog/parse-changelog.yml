@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/parse-community/parse-server/releases
+docs: https://github.com/parse-community/parse-server/blob/alpha/CHANGELOG.md
+component: parse-server
+scheme: semver
+current: '9.10.0'
+release_automation: >-
+  Releases are cut automatically by semantic-release across the release, beta and
+  alpha branches; every release ships generated notes classifying features vs fixes
+  vs breaking changes.
+entries:
+  - version: '9.10.0'
+    date: '2026-07-13'
+    type: minor
+    highlights: Latest stable feature release on the 9.x line.
+  - version: '8.6.87'
+    date: '2026-07-10'
+    type: patch
+    highlights: Maintenance/patch release on the maintained 8.6.x line.
+  - version: '8.6.85'
+    date: '2026-07-08'
+    type: patch
+  - version: '8.6.84'
+    date: '2026-06-25'
+    type: patch
+  - version: '8.6.83'
+    date: '2026-06-19'
+    type: patch
+window: recent-releases-only

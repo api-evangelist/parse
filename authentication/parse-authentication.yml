@@ -1,0 +1,51 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.parseplatform.org/rest/guide/
+docs: https://docs.parseplatform.org/rest/guide/#getting-started
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+  model: >-
+    Parse REST authentication is header-based. Every request identifies the
+    application with X-Parse-Application-Id and authorizes with a client key
+    (X-Parse-REST-API-Key), the Master Key (X-Parse-Master-Key, bypasses ACL/CLP),
+    or an end-user session token (X-Parse-Session-Token). There is no OAuth2/OIDC
+    surface at the Parse Server REST layer.
+schemes:
+  - name: X-Parse-Application-Id
+    type: apiKey
+    in: header
+    required: true
+    description: >-
+      Identifies which Parse application the request targets. Required on every
+      REST request.
+  - name: X-Parse-REST-API-Key
+    type: apiKey
+    in: header
+    description: >-
+      Client REST API key. Grants client-level access subject to class-level
+      permissions (CLP) and per-object ACLs.
+  - name: X-Parse-Master-Key
+    type: apiKey
+    in: header
+    description: >-
+      Master key. Full read/write access that bypasses all ACLs and CLPs. Use
+      only from trusted server-side environments; never ship in client apps.
+  - name: X-Parse-Session-Token
+    type: apiKey
+    in: header
+    description: >-
+      Per-user session token returned by signup/login. Scopes a request to the
+      permissions of that authenticated user.
+  - name: X-Parse-Revocable-Session
+    type: apiKey
+    in: header
+    description: >-
+      Set to "1" on login/signup to request a revocable session token stored in
+      the _Session class (recommended over legacy tokens).
+notes:
+  - Master key and REST API key are configured on the Parse Server instance, not
+    minted per-request.
+  - Access control is enforced through per-object ACLs and per-class Class-Level
+    Permissions (CLP); the Master Key overrides both.

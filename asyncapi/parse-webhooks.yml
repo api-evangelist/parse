@@ -1,0 +1,42 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.parseplatform.org/rest/guide/#hooks + https://docs.parseplatform.org/cloudcode/guide/
+spec_type: Webhooks
+type: Webhooks
+summary: >-
+  Parse Server exposes an outbound event surface through Cloud Code Webhooks and a
+  real-time LiveQuery subscription protocol. Cloud Code Webhooks let an external
+  HTTP endpoint receive function calls and object-lifecycle triggers; LiveQuery
+  pushes object create/update/delete events to subscribed clients over WebSocket.
+webhooks:
+  management_api:
+    base: /parse/hooks
+    auth: [X-Parse-Application-Id, X-Parse-Master-Key]
+    operations:
+      - GET /parse/hooks/functions
+      - POST /parse/hooks/functions
+      - PUT /parse/hooks/functions/<functionName>
+      - DELETE /parse/hooks/functions/<functionName>
+      - GET /parse/hooks/triggers
+      - POST /parse/hooks/triggers
+      - PUT /parse/hooks/triggers/<className>/<triggerName>
+      - DELETE /parse/hooks/triggers/<className>/<triggerName>
+  kinds:
+    - name: function webhook
+      description: >-
+        Registers an external HTTPS URL that Parse Server calls when a named cloud
+        function is invoked.
+    - name: trigger webhook
+      description: >-
+        Registers an external HTTPS URL invoked on object lifecycle triggers.
+      triggers: [beforeSave, afterSave, beforeDelete, afterDelete]
+livequery:
+  protocol: WebSocket
+  spec: https://github.com/parse-community/parse-server/wiki/Parse-LiveQuery-Protocol-Specification
+  events: [create, enter, update, leave, delete]
+  description: >-
+    Clients subscribe to a ParseQuery and receive real-time events as matching
+    objects change. Requires a Parse LiveQuery server component.
+push_notifications:
+  endpoint: /parse/push
+  description: Server-initiated push to registered Installations (APNs/FCM adapters).

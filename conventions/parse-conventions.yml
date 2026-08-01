@@ -1,0 +1,59 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.parseplatform.org/rest/guide/
+docs: https://docs.parseplatform.org/rest/guide/
+authentication:
+  style: api-key-headers
+  headers: [X-Parse-Application-Id, X-Parse-REST-API-Key, X-Parse-Master-Key, X-Parse-Session-Token]
+  ref: authentication/parse-authentication.yml
+idempotency:
+  supported: true
+  mechanism: request-deduplication
+  header: X-Parse-Request-Id
+  scope: per-application
+  status: experimental
+  docs: https://docs.parseplatform.org/parse-server/guide/#idempotency-enforcement
+  notes: >-
+    Parse Server "Idempotency Enforcement" deduplicates identical requests that
+    carry the X-Parse-Request-Id header, within a configurable TTL. Requests
+    without the header are processed normally. Marked experimental by the project.
+pagination:
+  style: limit-offset
+  params:
+    limit: { default: 100, note: "Parse Server removed the legacy 1,000 cap" }
+    skip: { note: "offset used with limit to page through results" }
+    count: { note: "set count=1 to also return the total matching count" }
+    order: { note: "comma-delimited field list; prefix with - for descending" }
+  example: "?limit=200&skip=400&order=-createdAt"
+field_selection:
+  keys: Restrict the fields returned by the query
+  excludeKeys: Exclude specific fields from the returned query
+expansion:
+  include: Dereference Pointer columns to return the full related object inline
+  example: "?include=game"
+data_types:
+  encoding: >-
+    Non-JSON types (Date, GeoPoint, File, Pointer, Relation, Bytes) are encoded as
+    JSON objects with a __type discriminator field.
+error_envelope:
+  shape: '{ "code": <int>, "error": "<message>" }'
+  content_type: application/json
+  format: parse-error-codes
+  ref: errors/parse-error-codes.yml
+  note: >-
+    Parse uses its own numeric error-code registry, not RFC 9457
+    application/problem+json.
+versioning:
+  scheme: semver
+  surface: parse-server npm package + REST mount path /parse/
+  ref: lifecycle/parse-lifecycle.yml
+rate_limiting:
+  built_in: false
+  note: >-
+    Parse Server ships no global rate-limit signaling by default; operators add
+    limits at the deployment/proxy layer or via the rateLimit configuration.
+batch:
+  endpoint: /parse/batch
+  note: >-
+    Multiple create/update/delete operations can be sent in one request; the
+    response is a per-item list of success or error objects.

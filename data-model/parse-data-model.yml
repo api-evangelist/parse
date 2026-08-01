@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: derived
+source: https://docs.parseplatform.org/rest/guide/ (built-in classes)
+note: >-
+  Parse is schema-flexible: applications define arbitrary classes at runtime. These
+  are the built-in system classes and their relationships that ship with every
+  Parse Server, plus the common object metadata every class carries.
+common_fields:
+  - { field: objectId, type: String, note: server-assigned unique id }
+  - { field: createdAt, type: Date, note: set on creation }
+  - { field: updatedAt, type: Date, note: set on every update }
+  - { field: ACL, type: ACL, note: per-object access control list }
+entities:
+  - name: _User
+    domain: users
+    description: Authenticatable user account.
+    key_fields: [username, password, email, emailVerified, authData, sessionToken]
+    relationships:
+      - { to: _Session, kind: has_many, via: user }
+      - { to: _Role, kind: belongs_to_many, via: roles (relation) }
+  - name: _Session
+    domain: sessions
+    description: A user's authenticated session; holds the session token.
+    key_fields: [sessionToken, user, installationId, expiresAt, createdWith]
+    relationships:
+      - { to: _User, kind: belongs_to, via: user }
+      - { to: _Installation, kind: has_one, via: installationId }
+  - name: _Role
+    domain: roles
+    description: Named role for grouping users/roles in ACLs and CLPs.
+    key_fields: [name, users, roles]
+    relationships:
+      - { to: _User, kind: has_many, via: users (relation) }
+      - { to: _Role, kind: has_many, via: roles (relation) }
+  - name: _Installation
+    domain: push
+    description: A device/app installation used for push notification targeting.
+    key_fields: [deviceType, deviceToken, installationId, channels, appVersion]
+  - name: _Product
+    domain: commerce
+    description: In-app purchase product metadata (StoreKit integration).
+relationship_types:
+  Pointer: single reference to another object (belongs_to / has_one)
+  Relation: many-to-many collection managed server-side (has_many)

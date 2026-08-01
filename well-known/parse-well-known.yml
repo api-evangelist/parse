@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of parseplatform.org
+note: >-
+  Parse Platform is self-hosted open-source software with no central hosted API
+  origin, so the marketing/docs domain exposes no /.well-known discovery surface.
+  The responsible-disclosure contact is published in SECURITY.md rather than a
+  /.well-known/security.txt file (see security/parse-vulnerability-disclosure.yml).
+host: https://parseplatform.org
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

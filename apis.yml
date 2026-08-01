@@ -1,8 +1,30 @@
 aid: parse
 name: Parse
-description: Parse is a company surfaced as a portfolio company of dcvc, gv and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Parse is an open-source Backend-as-a-Service (BaaS). Originally the mobile
+  backend company founded in 2011, backed by GV and DCVC, and acquired by Facebook
+  in 2013 before the hosted parse.com service was shut down in 2017, Parse now lives
+  on as the community-maintained Parse Platform. It centers on Parse Server, a
+  self-hostable Node.js/Express backend, paired with first-party client SDKs for
+  JavaScript, Apple (iOS/macOS), Android, Flutter/Dart, PHP, .NET, Swift and Arduino.
+  Parse exposes a documented REST API over HTTP+JSON providing a schemaless object
+  store, user authentication and sessions, roles and ACL/class-level permissions,
+  file storage, rich queries, Cloud Code, Cloud Code Webhooks, LiveQuery real-time
+  subscriptions, analytics and push notifications.
 url: https://raw.githubusercontent.com/api-evangelist/parse/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://raw.githubusercontent.com/parse-community/parse-server/alpha/.github/parse-server-logo.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,10 +34,34 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Backend as a Service
+- BaaS
+- Mobile
+- Open Source
+- REST API
+- Database
+- Authentication
+- Push Notifications
+- Real Time
+apis:
+- name: Parse REST API
+  description: >-
+    HTTP+JSON REST API for the Parse Platform: object CRUD and queries, users and
+    sessions, roles, files, analytics and push. Parse Server is self-hosted, so the
+    base URL is the operator's own Parse Server origin with the default /parse/ mount.
+  humanURL: https://docs.parseplatform.org/rest/guide/
+  baseURL: https://YOUR.PARSE-SERVER.HERE/parse/
+  tags:
+  - Backend as a Service
+  - REST API
+  properties:
+  - type: Documentation
+    url: https://docs.parseplatform.org/rest/guide/
+  - type: APIReference
+    url: https://docs.parseplatform.org/rest/guide/#quick-reference
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,4 +69,59 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://parse.com
+  url: https://parseplatform.org
+- type: DeveloperPortal
+  url: https://docs.parseplatform.org/
+- type: Documentation
+  url: https://docs.parseplatform.org/
+- type: APIReference
+  url: https://docs.parseplatform.org/rest/guide/
+- type: GettingStarted
+  url: https://docs.parseplatform.org/parse-server/guide/
+- type: GitHubOrganization
+  url: https://github.com/parse-community
+- type: Blog
+  url: https://blog.parseplatform.org/
+- type: Support
+  url: https://community.parseplatform.org/
+- type: Packages
+  url: packages/parse-packages.yml
+- type: SDKs
+  url: packages/parse-packages.yml
+- type: Authentication
+  url: authentication/parse-authentication.yml
+- type: Conventions
+  url: conventions/parse-conventions.yml
+- type: Idempotency
+  url: conventions/parse-conventions.yml
+- type: ErrorCatalog
+  url: errors/parse-error-codes.yml
+- type: Webhooks
+  url: asyncapi/parse-webhooks.yml
+- type: Lifecycle
+  url: lifecycle/parse-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/parse-lifecycle.yml
+- type: ChangeLog
+  url: changelog/parse-changelog.yml
+- type: DataModel
+  url: data-model/parse-data-model.yml
+- type: MCPServer
+  url: mcp/parse-mcp.yml
+- type: LLMsTxt
+  url: llms/parse-llms.txt
+- type: WellKnown
+  url: well-known/parse-well-known.yml
+- type: VulnerabilityDisclosure
+  url: security/parse-vulnerability-disclosure.yml
+- type: Security
+  url: security/parse-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/parse-domain-security.yml
+- type: Conformance
+  url: conformance/parse-conformance.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1

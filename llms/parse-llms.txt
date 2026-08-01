@@ -1,0 +1,35 @@
+# Parse Platform
+
+> Parse is an open-source Backend-as-a-Service. Originally the mobile BaaS company
+> acquired by Facebook in 2013 and shut down in 2017, Parse now lives on as the
+> community-maintained Parse Platform: a self-hostable Parse Server (Node.js/Express)
+> plus first-party SDKs for JavaScript, Apple, Android, Flutter/Dart, PHP, .NET, Swift
+> and Arduino, exposing an object store, user auth, files, queries, roles, Cloud Code,
+> LiveQuery real-time, push notifications, and a documented REST API.
+
+## APIs
+- [Parse REST API Guide](https://docs.parseplatform.org/rest/guide/): Object CRUD, queries, users, sessions, roles, files, analytics, push over HTTP+JSON.
+- [Parse Server Guide](https://docs.parseplatform.org/parse-server/guide/): Deploying and configuring Parse Server.
+
+## Docs
+- [Documentation home](https://docs.parseplatform.org/)
+- [REST quick reference](https://docs.parseplatform.org/rest/guide/#quick-reference)
+- [Cloud Code guide](https://docs.parseplatform.org/cloudcode/guide/)
+- [LiveQuery protocol](https://github.com/parse-community/parse-server/wiki/Parse-LiveQuery-Protocol-Specification)
+
+## Artifacts (API Evangelist)
+- [Packages / SDKs](packages/parse-packages.yml)
+- [Authentication](authentication/parse-authentication.yml)
+- [Conventions](conventions/parse-conventions.yml)
+- [Error codes](errors/parse-error-codes.yml)
+- [Webhooks / LiveQuery](asyncapi/parse-webhooks.yml)
+- [Lifecycle](lifecycle/parse-lifecycle.yml)
+- [Changelog](changelog/parse-changelog.yml)
+- [Data model](data-model/parse-data-model.yml)
+- [MCP (candidate)](mcp/parse-mcp.yml)
+- [Vulnerability disclosure](security/parse-vulnerability-disclosure.yml)
+
+## Source
+- [parse-community on GitHub](https://github.com/parse-community)
+- [parse-server](https://github.com/parse-community/parse-server)
+- [Parse Dashboard](https://github.com/parse-community/parse-dashboard)
