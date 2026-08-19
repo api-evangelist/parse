@@ -2,46 +2,50 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: https://docs.parseplatform.org/rest/guide/ (REST operation surface)
-note: >-
-  No official Parse Platform MCP server was found. This is a candidate tool list
-  derived from the documented Parse Server REST API so an MCP server could be
-  scaffolded over any Parse Server instance. Tools operate against a configured
-  base URL and X-Parse-Application-Id / key headers.
+note: No official Parse Platform MCP server was found. This is a candidate tool list derived from the
+  documented Parse Server REST API so an MCP server could be scaffolded over any Parse Server instance.
+  Tools operate against a configured base URL and X-Parse-Application-Id / key headers.
 server:
   name: parse
   transport: http
   url: null
 tools:
-  - name: create_object
-    description: Create an object in a class (POST /parse/classes/<className>).
-    source_operation: rest/objects#create
-  - name: get_object
-    description: Retrieve an object by id (GET /parse/classes/<className>/<objectId>).
-    source_operation: rest/objects#retrieve
-  - name: update_object
-    description: Update an object (PUT /parse/classes/<className>/<objectId>).
-    source_operation: rest/objects#update
-  - name: delete_object
-    description: Delete an object (DELETE /parse/classes/<className>/<objectId>).
-    source_operation: rest/objects#delete
-  - name: query_objects
-    description: Query a class with where/limit/skip/order/keys/include (GET /parse/classes/<className>).
-    source_operation: rest/queries#query
-  - name: signup_user
-    description: Sign up a new user (POST /parse/users).
-    source_operation: rest/users#signup
-  - name: login_user
-    description: Log in and obtain a session token (GET /parse/login).
-    source_operation: rest/users#login
-  - name: list_roles
-    description: Retrieve and query roles (GET /parse/roles).
-    source_operation: rest/roles#query
-  - name: upload_file
-    description: Upload a file (POST /parse/files/<fileName>).
-    source_operation: rest/files#upload
-  - name: send_push
-    description: Send a push notification (POST /parse/push).
-    source_operation: rest/push-notifications#send
-  - name: track_event
-    description: Record a custom analytics event (POST /parse/events/<eventName>).
-    source_operation: rest/analytics#custom
+- name: create_object
+  description: Create an object in a class (POST /parse/classes/<className>).
+  source_operation: rest/objects#create
+- name: get_object
+  description: Retrieve an object by id (GET /parse/classes/<className>/<objectId>).
+  source_operation: rest/objects#retrieve
+- name: update_object
+  description: Update an object (PUT /parse/classes/<className>/<objectId>).
+  source_operation: rest/objects#update
+- name: delete_object
+  description: Delete an object (DELETE /parse/classes/<className>/<objectId>).
+  source_operation: rest/objects#delete
+- name: query_objects
+  description: Query a class with where/limit/skip/order/keys/include (GET /parse/classes/<className>).
+  source_operation: rest/queries#query
+- name: signup_user
+  description: Sign up a new user (POST /parse/users).
+  source_operation: rest/users#signup
+- name: login_user
+  description: Log in and obtain a session token (GET /parse/login).
+  source_operation: rest/users#login
+- name: list_roles
+  description: Retrieve and query roles (GET /parse/roles).
+  source_operation: rest/roles#query
+- name: upload_file
+  description: Upload a file (POST /parse/files/<fileName>).
+  source_operation: rest/files#upload
+- name: send_push
+  description: Send a push notification (POST /parse/push).
+  source_operation: rest/push-notifications#send
+- name: track_event
+  description: Record a custom analytics event (POST /parse/events/<eventName>).
+  source_operation: rest/analytics#custom
+deployment:
+  mode: none
+  verified: derived
+  tools: 11
+  checked: '2026-08-12'
+  source: catalog MCP census
