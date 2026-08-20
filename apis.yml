@@ -37,6 +37,16 @@ created: '2026-07-17'
 modified: '2026-07-20'
 tags:
 - Company
+- Backend-as-a-Service
+- Mobile
+- Open-Source
+- REST API
+- Database
+- Authentication
+- Push Notifications
+- Real-Time
+tags_raw:
+- Company
 - Backend as a Service
 - BaaS
 - Mobile
@@ -55,6 +65,9 @@ apis:
   humanURL: https://docs.parseplatform.org/rest/guide/
   baseURL: https://YOUR.PARSE-SERVER.HERE/parse/
   tags:
+  - Backend-as-a-Service
+  - REST API
+  tags_raw:
   - Backend as a Service
   - REST API
   properties:
