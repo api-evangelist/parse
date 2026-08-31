@@ -48,7 +48,8 @@ created: '2026-07-17'
 modified: '2026-07-20'
 tags:
 - Company
-- Backend-as-a-Service
+- Backend as a Service
+- BaaS
 - Mobile
 - Open-Source
 - REST API
@@ -76,7 +77,7 @@ apis:
   humanURL: https://docs.parseplatform.org/rest/guide/
   baseURL: https://YOUR.PARSE-SERVER.HERE/parse/
   tags:
-  - Backend-as-a-Service
+  - Backend as a Service
   - REST API
   tags_raw:
   - Backend as a Service
@@ -92,6 +93,11 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/facebook/
+  name: Facebook
+  x-relationship: acquired
+  x-evidence: "Originally the mobile backend company founded in 2011, backed by GV and DCVC, and acquired by Facebook in 2013 before the hosted parse."
 - type: Website
   url: https://parseplatform.org
 - type: DeveloperPortal
