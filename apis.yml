@@ -51,7 +51,7 @@ tags:
 - Company
 - Backend-as-a-Service
 - Mobile
-- Open-Source
+- Open Source
 - REST API
 - Database
 - Authentication
@@ -60,7 +60,6 @@ tags:
 tags_raw:
 - Company
 - Backend as a Service
-- BaaS
 - Mobile
 - Open Source
 - REST API
@@ -68,6 +67,7 @@ tags_raw:
 - Authentication
 - Push Notifications
 - Real Time
+- Open-Source
 apis:
 - name: Parse REST API
   description: >-
